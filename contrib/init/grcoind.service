@@ -1,0 +1,22 @@
+[Unit]
+Description=GRCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=grcoincore
+Group=grcoincore
+
+Type=forking
+PIDFile=/var/lib/grcoind/grcoind.pid
+ExecStart=/usr/bin/grcoind -daemon -pid=/var/lib/grcoind/grcoind.pid \
+-conf=/etc/grcoincore/grcoin.conf -datadir=/var/lib/grcoind -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

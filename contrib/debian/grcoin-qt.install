@@ -1,0 +1,6 @@
+usr/local/bin/grcoin-qt usr/bin
+share/pixmaps/grcoin32.xpm usr/share/pixmaps
+share/pixmaps/grcoin16.xpm usr/share/pixmaps
+share/pixmaps/grcoin128.png usr/share/pixmaps
+debian/grcoin-qt.desktop usr/share/applications
+debian/grcoin-qt.protocol usr/share/kde4/services/

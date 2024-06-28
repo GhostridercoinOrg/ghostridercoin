@@ -1,0 +1,70 @@
+Source: grcoin
+Section: utils
+Priority: optional
+Maintainer: Holger Schinzel <holger@grcoin.net>
+Uploaders: Holger Schinzel <holger@grcoin.net>
+Build-Depends: debhelper,
+ devscripts,
+ automake,
+ libtool,
+ bash-completion,
+ libdb4.8++-dev,
+ libssl-dev,
+ pkg-config,
+ libevent-dev,
+ libboost-system1.48-dev | libboost-system-dev (>> 1.47),
+ libboost-filesystem1.48-dev | libboost-filesystem-dev (>> 1.47),
+ libboost-program-options1.48-dev | libboost-program-options-dev (>> 1.47),
+ libboost-thread1.48-dev | libboost-thread-dev (>> 1.47),
+ libboost-test1.48-dev | libboost-test-dev (>> 1.47),
+ libboost-chrono1.48-dev | libboost-chrono-dev (>> 1.47),
+ libminiupnpc8-dev | libminiupnpc-dev,
+ qt4-qmake, libqt4-dev,
+ qttools5-dev-tools, qttools5-dev,
+ libqrencode-dev,
+ libprotobuf-dev, protobuf-compiler,
+ python,
+ libzmq3-dev
+Standards-Version: 3.9.2
+Homepage: https://www.grcoin.net/
+Vcs-Git: git://github.com/grcoin/grcoin.git
+Vcs-Browser: https://github.com/GRCoin-Coin/Core-Wallet
+
+Package: grcoind
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer network based digital currency - daemon
+ GRCoin is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. GRCoin uses peer-to-peer
+ technology to operate with no central authority: managing transactions
+ and issuing money are carried out collectively by the network. GRCoin Core
+ is the name of the open source software which enables the use of this currency.
+ .
+ This package provides the daemon, grcoind, and the CLI tool
+ grcoin-cli to interact with the daemon.
+
+Package: grcoin-qt
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer network based digital currency - Qt GUI
+ GRCoin is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. GRCoin uses peer-to-peer
+ technology to operate with no central authority: managing transactions
+ and issuing money are carried out collectively by the network. GRCoin Core
+ is the name of the open source software which enables the use of this currency.
+ .
+ This package provides GRCoin-Qt, a GUI for GRCoin based on Qt.
+
+Package: grcoin-tx
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer digital currency - standalone transaction tool
+ GRCoin is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. GRCoin uses peer-to-peer
+ technology to operate with no central authority: managing transactions
+ and issuing money are carried out collectively by the network. GRCoin Core
+ is the name of the open source software which enables the use of this currency.
+ .
+ This package provides grcoin-tx, a command-line transaction creation
+ tool which can be used without a grcoin daemon.  Some means of
+ exchanging minimal transaction data with peers is still required.

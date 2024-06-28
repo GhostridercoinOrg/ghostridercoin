@@ -1,0 +1,25 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="ar">locale/grcoin_ar.qm</file>
+        <file alias="bg">locale/grcoin_bg.qm</file>
+        <file alias="de">locale/grcoin_de.qm</file>
+        <file alias="en">locale/grcoin_en.qm</file>
+        <file alias="es">locale/grcoin_es.qm</file>
+        <file alias="fi">locale/grcoin_fi.qm</file>
+        <file alias="fr">locale/grcoin_fr.qm</file>
+        <file alias="it">locale/grcoin_it.qm</file>
+        <file alias="ja">locale/grcoin_ja.qm</file>
+        <file alias="ko">locale/grcoin_ko.qm</file>
+        <file alias="nl">locale/grcoin_nl.qm</file>
+        <file alias="pl">locale/grcoin_pl.qm</file>
+        <file alias="pt">locale/grcoin_pt.qm</file>
+        <file alias="ro">locale/grcoin_ro.qm</file>
+        <file alias="ru">locale/grcoin_ru.qm</file>
+        <file alias="sk">locale/grcoin_sk.qm</file>
+        <file alias="th">locale/grcoin_th.qm</file>
+        <file alias="tr">locale/grcoin_tr.qm</file>
+        <file alias="vi">locale/grcoin_vi.qm</file>
+        <file alias="zh_CN">locale/grcoin_zh_CN.qm</file>
+        <file alias="zh_TW">locale/grcoin_zh_TW.qm</file>
+    </qresource>
+</RCC>

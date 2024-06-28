@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=GRCoin Core
+Comment=GRCoin P2P Cryptocurrency
+Comment[de]=Verbinde mit dem GRCoin peer-to-peer Netzwerk
+Comment[fr]=GRCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=GRCoin, eşten eşe kriptografik sanal para birimi
+Exec=grcoin-qt %u
+Terminal=false
+Type=Application
+Icon=grcoin128
+MimeType=x-scheme-handler/grcoin;
+Categories=Office;Finance;
