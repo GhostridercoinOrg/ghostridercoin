@@ -550,6 +550,11 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0xf3a732cdffc36692963e32653ea5d029ad02a8930a6c19192af2284cffb240cc"));
 
         vSeeds.emplace_back("209.250.248.187");
+        vSeeds.emplace_back("149.28.34.182");
+        vSeeds.emplace_back("140.82.6.80");
+        vSeeds.emplace_back("64.176.193.63");
+        vSeeds.emplace_back("149.28.233.244");
+        vSeeds.emplace_back("209.250.248.187");
 
         // GRCoin addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 38);
