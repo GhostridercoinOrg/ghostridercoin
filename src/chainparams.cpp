@@ -555,6 +555,7 @@ public:
         vSeeds.emplace_back("64.176.193.63");
         vSeeds.emplace_back("149.28.233.244");
         vSeeds.emplace_back("209.250.248.187");
+        vSeeds.emplace_back("202.61.238.92");
 
         // GRCoin addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 38);
