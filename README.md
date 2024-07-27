@@ -36,13 +36,5 @@ Ghostrider algorithm harnesses the power of the CPU to mine coins. This means th
 
 ## Original repo forked and updated by:
                              
-                             
-##      (                   (   
-##   (  )\ )   (      (    ))\  
-##   )\(()/(   )\ )   )\  /((_) 
-##  ((_))(_)) _(_/(  ((_)(_))   
-## / _|| || || ' \))/ _| / -_)  
-## \__| \_, ||_||_| \__| \___|  
-##      |__/                    
-
+*cynce*
 
