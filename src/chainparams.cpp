@@ -632,10 +632,14 @@ public:
     CTestNetParams()
     {
         strNetworkID = "test";
-        consensus.nSubsidyHalvingInterval = 210240;
-        consensus.nSmartnodePaymentsStartBlock = 1000; // not true, but it's ok as long as it's less then nSmartnodePaymentsIncreaseBlock
-        consensus.nSmartnodePaymentsIncreaseBlock = 4030;
-        consensus.nSmartnodePaymentsIncreasePeriod = 10;
+        consensus.nSubsidyHalvingInterval = 200;
+        consensus.nSmartnodePaymentsStartBlock = 200; // not true, but it's ok as long as it's less then nSmartnodePaymentsIncreaseBlock
+        consensus.nSubsidyReductionInterval = 200; // 2,000 blocks
+        consensus.nSubsidyReductionPercentage = 0.05; // 5% reduction
+        consensus.nRewardChangeBlockHeight = 2323;    // Block height at which reward changes
+        consensus.nNewReward = 69 * COIN;             // New reward amount
+//        consensus.nSmartnodePaymentsIncreaseBlock = 4030;
+//        consensus.nSmartnodePaymentsIncreasePeriod = 10;
         consensus.nInstantSendConfirmationsRequired = 2;
         consensus.nInstantSendKeepLock = 6;
         consensus.nBudgetPaymentsStartBlock = INT_MAX;
@@ -703,8 +707,8 @@ public:
 
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.emplace_back("109.236.81.133");
-        vSeeds.emplace_back("mtn.grcoin.com");
+ //       vSeeds.emplace_back("109.236.81.133");
+ //       vSeeds.emplace_back("mtn.grcoin.com");
 
         // Testnet GRCoin addresses start with 'f'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 95);
@@ -732,13 +736,13 @@ public:
         consensus.llmqTypePlatform = Consensus::LLMQ_100_67;
 
         consensus.nCollaterals = SmartnodeCollaterals(
-            {{INT_MAX, 60000 * COIN}},
+            {{INT_MAX, 10000 * COIN}},
             {{INT_MAX, 20}});
 
-        consensus.nFutureRewardShare = Consensus::FutureRewardShare(0.8, 0.2, 0.0);
+        consensus.nFutureRewardShare = Consensus::FutureRewardShare(0.2, 0.8, 0.0);
 
         std::vector<FounderRewardStructure> rewardStructures = {{INT_MAX, 10}}; // 5% founder/dev fee forever
-        consensus.nFounderPayment = FounderPayment(rewardStructures, 1, "rghjACzPtVAN2wydgDbn9Jq1agREu6rH1e");
+        consensus.nFounderPayment = FounderPayment(rewardStructures, 1, "fXDPzS5DhHAJ4E9zwAxbekkx6DFwdwu4ar"); // Cynce test
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = false;
@@ -755,7 +759,7 @@ public:
         nPoolNewMaxParticipants = 20;
         nFulfilledRequestExpireTime = 5 * 60; // fulfilled requests expire in 5 minutes
 
-        vSporkAddresses = {"rsqc2caFRG6myRdzKipP4PpVW9LnFaG7CH"};
+        vSporkAddresses = {"fEhXRNdXoJVbUJNJCbZFiR6EtkoaQ3zzXD"};
         nMinSporkKeys = 1;
         fBIP9CheckSmartnodesUpgraded = true;
 

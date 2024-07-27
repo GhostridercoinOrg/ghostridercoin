@@ -1163,16 +1163,39 @@ NOTE:   unlike bitcoin we are using PREVIOUS block height here,
         might be a good idea to change this to use prev bits
         but current height to avoid confusion.
 */
+// CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
+//{
+//    int halvings = nPrevHeight / consensusParams.nSubsidyHalvingInterval;
+//    // Force block reward to zero when right shift is undefined.
+//    if (halvings >= 64)
+//        return 0;
+//
+//    CAmount nSubsidy = 21 * COIN;
+    // Subsidy is cut in half every 20,000 blocks which will occur approximately every 4 years.
+//    nSubsidy >>= halvings;
+//    return nSubsidy;
+//}
+
 CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
 {
-    int halvings = nPrevHeight / consensusParams.nSubsidyHalvingInterval;
-    // Force block reward to zero when right shift is undefined.
-    if (halvings >= 64)
+    int reductions = nPrevHeight / consensusParams.nSubsidyReductionInterval;
+
+    // Force block reward to zero if the reduction makes it negligible
+    if (reductions >= 64)
         return 0;
 
     CAmount nSubsidy = 21 * COIN;
-    // Subsidy is cut in half every 20,000 blocks which will occur approximately every 4 years.
-    nSubsidy >>= halvings;
+
+    // Change reward to the new value starting at the specified block height
+    if (nPrevHeight >= consensusParams.nRewardChangeBlockHeight) {
+        nSubsidy = consensusParams.nNewReward;
+    }
+
+    // Apply a 5% reduction every 50,000 blocks
+    for (int i = 0; i < reductions; ++i) {
+        nSubsidy -= nSubsidy * consensusParams.nSubsidyReductionPercentage;
+    }
+
     return nSubsidy;
 }
 
