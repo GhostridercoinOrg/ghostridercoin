@@ -1,6 +1,6 @@
 # GhostRider Coin (GRR)
 
-DEV Release: v2.0 - THIS IS NOT A MAINNET RELEASE
+Release: v2.0 - THIS IS A MAINNET RELEASE
 
 ## Reintroducing Smartnodes
 
@@ -10,9 +10,9 @@ Per community vote, GRCoin is introducing a smartnode system. We still emphasize
 
 There is no dev fee in GRCoin.
 
-## Block Time
+## Block Time and Rewards
 
-The block creation time for GRCoin is 90 seconds. Every 20,000 blocks, the block reward will be halved, approximately every 21 days.
+The block creation time for GRCoin is 90 seconds. Every 50,000 blocks, the block reward will reduced by 5%, approximately every 60 days. The rewards split is 80% miners / 20% smartnodes.
 
 ## Total Supply
 

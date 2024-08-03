@@ -478,10 +478,16 @@ public:
     CMainParams()
     {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 20000;            // Note: actual number of blocks per calendar year with DGW v3 is ~200700 (for example 449750 - 249050)
-        consensus.nSmartnodePaymentsStartBlock = 5761;         //
-        consensus.nSmartnodePaymentsIncreaseBlock = 158000;    // actual historical value
-        consensus.nSmartnodePaymentsIncreasePeriod = 576 * 30; // 17280 - actual historical value
+//        consensus.nSubsidyHalvingInterval = 20000;            // Note: actual number of blocks per calendar year with DGW v3 is ~200700 (for example 449750 - 249050)
+//        consensus.nSmartnodePaymentsStartBlock = 5761;         //
+//        consensus.nSmartnodePaymentsIncreaseBlock = 158000;    // actual historical value
+//        consensus.nSmartnodePaymentsIncreasePeriod = 576 * 30; // 17280 - actual historical value
+        consensus.nSubsidyHalvingInterval = 50000;
+        consensus.nSmartnodePaymentsStartBlock = 50000; // not true, but it's ok as long as it's less then nSmartnodePaymentsIncreaseBlock
+        consensus.nSubsidyReductionInterval = 50000; // 2,000 blocks
+        consensus.nSubsidyReductionPercentage = 0.05; // 5% reduction
+        consensus.nRewardChangeBlockHeight = 50000;    // Block height at which reward changes
+        consensus.nNewReward = 21 * COIN;             // New reward amount
         consensus.nInstantSendConfirmationsRequired = 6;
         consensus.nInstantSendKeepLock = 24;
         consensus.nBudgetPaymentsStartBlock = INT_MAX; // actual historical value
@@ -549,13 +555,13 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x79040cca0984d011a381648a5c7cf59d0016390509255dc3c06270cd5385ca26"));
         assert(genesis.hashMerkleRoot == uint256S("0xf3a732cdffc36692963e32653ea5d029ad02a8930a6c19192af2284cffb240cc"));
 
-        vSeeds.emplace_back("209.250.248.187");
-        vSeeds.emplace_back("149.28.34.182");
-        vSeeds.emplace_back("140.82.6.80");
-        vSeeds.emplace_back("64.176.193.63");
-        vSeeds.emplace_back("149.28.233.244");
-        vSeeds.emplace_back("209.250.248.187");
-        vSeeds.emplace_back("202.61.238.92");
+//        vSeeds.emplace_back("209.250.248.187");
+//        vSeeds.emplace_back("149.28.34.182");
+//        vSeeds.emplace_back("140.82.6.80");
+//        vSeeds.emplace_back("64.176.193.63");
+//        vSeeds.emplace_back("149.28.233.244");
+//        vSeeds.emplace_back("209.250.248.187");
+//        vSeeds.emplace_back("202.61.238.92");
 
         // GRCoin addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 38);
@@ -574,14 +580,13 @@ public:
         //        	std::cout << "mainnet is disable" << endl;
         //        	exit(0);
         //        }
-        std::vector<FounderRewardStructure> rewardStructures = {{INT_MAX, 1}}; // 1% founder/dev fee forever
-        consensus.nFounderPayment = FounderPayment(rewardStructures, 1);
+//        std::vector<FounderRewardStructure> rewardStructures = {{INT_MAX, 1}}; // 1% founder/dev fee forever
+//        consensus.nFounderPayment = FounderPayment(rewardStructures, 1);
         consensus.nCollaterals = SmartnodeCollaterals(
-            {},
-            {{INT_MAX, 0}});
-        // FutureRewardShare defaultShare(0.8,0.2,0.0);
-        consensus.nFutureRewardShare = Consensus::FutureRewardShare(0.8, 0.2, 0.0);
-
+            {{INT_MAX, 20000 * COIN}},
+            {{INT_MAX, 20}});
+        // FutureRewardShare defaultShare(0.2,0.8,0.0);
+        consensus.nFutureRewardShare = Consensus::FutureRewardShare(0.2, 0.8, 0.0);
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
         // long living quorum params
