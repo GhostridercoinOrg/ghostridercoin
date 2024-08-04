@@ -1176,13 +1176,13 @@ NOTE:   unlike bitcoin we are using PREVIOUS block height here,
 //    return nSubsidy;
 //}
 
-CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
-{
-    int reductions = nPrevHeight / consensusParams.nSubsidyReductionInterval;
+// CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
+// {
+//    int reductions = nPrevHeight / consensusParams.nSubsidyReductionInterval;
 
     // Force block reward to zero if the reduction makes it negligible
-    if (reductions >= 64)
-        return 0;
+ //   if (reductions >= 64)
+//        return 0;
 
 //    CAmount nSubsidy = 21 * COIN;
 
@@ -1190,6 +1190,48 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
 //    if (nPrevHeight >= consensusParams.nRewardChangeBlockHeight) {
 //        nSubsidy = consensusParams.nNewReward;
 //    }
+
+//    CAmount nSubsidy = 21 * COIN;
+
+    // Apply new reward logic at specified block height
+//    if (nPrevHeight >= consensusParams.nRewardChangeBlockHeight) {
+//        nSubsidy = consensusParams.nNewReward;  // New reward amount starting at the specified block height
+//    } else if (nPrevHeight >= 40000) {
+ //       nSubsidy = 5.25 * COIN; // Accounts for second halving
+ //   } else if (nPrevHeight >= 20000) {
+ //       nSubsidy = 10.5 * COIN; // Accounts for first halving
+//    }
+//
+ //   return nSubsidy;
+//}
+
+    // Apply a 5% reduction every 50,000 blocks
+//    for (int i = 0; i < reductions; ++i) {
+//        nSubsidy -= nSubsidy * consensusParams.nSubsidyReductionPercentage;
+//    }
+//
+ //   return nSubsidy;
+//}
+
+//CAmount GetSmartnodePayment(int nHeight, CAmount blockValue, CAmount specialTxFees)
+//{
+//    size_t mnCount = chainActive.Tip() == nullptr ? 0 : deterministicMNManager->GetListForBlock(chainActive.Tip()).GetAllMNsCount();
+//
+//    if (mnCount >= 10 || Params().NetworkIDString().compare("test") == 0) {
+//        int percentage = Params().GetConsensus().nCollaterals.getRewardPercentage(nHeight);
+//        CAmount specialFeeReward = specialTxFees * Params().GetConsensus().nFutureRewardShare.smartnode;
+//        return blockValue * percentage / 100 + specialFeeReward;
+//    } else {
+//        return 0;
+//    }
+//}
+CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
+{
+    int reductions = nPrevHeight / consensusParams.nSubsidyReductionInterval;
+
+    // Force block reward to zero if the reduction makes it negligible
+    if (reductions >= 64)
+        return 0;
 
     CAmount nSubsidy = 21 * COIN;
 
@@ -1202,12 +1244,9 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
         nSubsidy = 10.5 * COIN; // Accounts for first halving
     }
 
-    return nSubsidy;
-}
-
     // Apply a 5% reduction every 50,000 blocks
     for (int i = 0; i < reductions; ++i) {
-        nSubsidy -= nSubsidy * consensusParams.nSubsidyReductionPercentage;
+        nSubsidy -= nSubsidy * consensusParams.nSubsidyReductionPercentage / 100;
     }
 
     return nSubsidy;
