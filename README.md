@@ -1,6 +1,6 @@
 # GhostRider Coin (GRR)
 
-Release: v2.0 - THIS IS A MAINNET RELEASE
+Release: v2.0.5.1 - THIS IS A MAINNET RELEASE
 
 ## Reintroducing Smartnodes
 
@@ -22,9 +22,9 @@ The total supply of GRCoin is approximately 25,000,000 GRR.
 
 Please visit the prokect discord. https://discord.gg/uQMQPbv5w9
 
-## All for Miners
+## Pro-Miner for Miners
 
-All rewards from GRCoin belong to the miners and smartnode holders. There are no other incentives or privileges.
+80% rewards from GRCoin belong to the miners and 20% smartnode holders. There are no other incentives or privileges.
 
 ## Your Decision
 
@@ -36,5 +36,5 @@ Ghostrider algorithm harnesses the power of the CPU to mine coins. This means th
 
 ## Original repo forked and updated by:
                              
-*cynce*
+**cynce**
 
