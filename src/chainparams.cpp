@@ -553,13 +553,10 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x79040cca0984d011a381648a5c7cf59d0016390509255dc3c06270cd5385ca26"));
         assert(genesis.hashMerkleRoot == uint256S("0xf3a732cdffc36692963e32653ea5d029ad02a8930a6c19192af2284cffb240cc"));
 
-//        vSeeds.emplace_back("209.250.248.187");
-//        vSeeds.emplace_back("149.28.34.182");
-//        vSeeds.emplace_back("140.82.6.80");
-//        vSeeds.emplace_back("64.176.193.63");
-//        vSeeds.emplace_back("149.28.233.244");
-//        vSeeds.emplace_back("209.250.248.187");
-//        vSeeds.emplace_back("202.61.238.92");
+        vSeeds.emplace_back("51.75.77.193");    //explorer
+        vSeeds.emplace_back("198.74.53.52");    //faucet
+        vSeeds.emplace_back("154.12.251.227");  //node
+        vSeeds.emplace_back("45.79.192.36");
 
         // GRCoin addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 38);
