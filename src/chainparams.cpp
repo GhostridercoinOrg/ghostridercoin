@@ -486,8 +486,6 @@ public:
         consensus.nSmartnodePaymentsStartBlock = 50000; // not true, but it's ok as long as it's less then nSmartnodePaymentsIncreaseBlock
         consensus.nSubsidyReductionInterval = 50000; // 2,000 blocks
         consensus.nSubsidyReductionPercentage = 0.05; // 5% reduction
-        consensus.nRewardChangeBlockHeight = 50000;    // Block height at which reward changes
-        consensus.nNewReward = 21 * COIN;             // New reward amount
         consensus.nInstantSendConfirmationsRequired = 6;
         consensus.nInstantSendKeepLock = 24;
         consensus.nBudgetPaymentsStartBlock = INT_MAX; // actual historical value
@@ -641,8 +639,6 @@ public:
         consensus.nSmartnodePaymentsStartBlock = 200; // not true, but it's ok as long as it's less then nSmartnodePaymentsIncreaseBlock
         consensus.nSubsidyReductionInterval = 200; // 2,000 blocks
         consensus.nSubsidyReductionPercentage = 0.05; // 5% reduction
-        consensus.nRewardChangeBlockHeight = 2323;    // Block height at which reward changes
-        consensus.nNewReward = 69 * COIN;             // New reward amount
 //        consensus.nSmartnodePaymentsIncreaseBlock = 4030;
 //        consensus.nSmartnodePaymentsIncreasePeriod = 10;
         consensus.nInstantSendConfirmationsRequired = 2;

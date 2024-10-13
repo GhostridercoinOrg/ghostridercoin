@@ -1235,18 +1235,21 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
 
     CAmount nSubsidy = 21 * COIN;
 
-    // Apply new reward logic at specified block height
-    if (nPrevHeight >= consensusParams.nRewardChangeBlockHeight) {
-        nSubsidy = consensusParams.nNewReward;  // New reward amount starting at the specified block height
+    if (nPrevHeight >= 120000 && nPrevHeight <= 149999) {
+        return nSubsidy = 18.004875 * COIN;     // Fork to return to 5% reduction formula
+    } else if (nPrevHeight >= 100000) {
+        return nSubsidy = 20.97900525 * COIN;   // Accounts for second reduction with incorrect logic
+    } else if (nPrevHeight >= 50000) {
+        return nSubsidy = 20.9895 * COIN;       // Accounts for first reduction with incorrect logic
     } else if (nPrevHeight >= 40000) {
-        nSubsidy = 5.25 * COIN; // Accounts for second halving
+        return nSubsidy = 5.25 * COIN;          // Accounts for second halving of original creator
     } else if (nPrevHeight >= 20000) {
-        nSubsidy = 10.5 * COIN; // Accounts for first halving
+        return nSubsidy = 10.5 * COIN;          // Accounts for first halving of original creator
     }
 
     // Apply a 5% reduction every 50,000 blocks
     for (int i = 0; i < reductions; ++i) {
-        nSubsidy -= nSubsidy * consensusParams.nSubsidyReductionPercentage / 100;
+        nSubsidy -= nSubsidy * consensusParams.nSubsidyReductionPercentage;
     }
 
     return nSubsidy;
