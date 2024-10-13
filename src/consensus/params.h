@@ -147,8 +147,6 @@ struct Params {
     int nSmartnodePaymentsIncreaseBlock;
     int nSubsidyReductionInterval;      // Interval for reward reduction (50,000 blocks)
     double nSubsidyReductionPercentage; // Percentage for reward reduction (5%)
-    int nRewardChangeBlockHeight;       // Block height at which the reward changes (e.g., 2500)
-    CAmount nNewReward;                 // New reward amount starting at the specified block height
     int nSmartnodePaymentsIncreasePeriod;  // in blocks
     int nInstantSendConfirmationsRequired; // in blocks
     int nInstantSendKeepLock;              // in blocks
