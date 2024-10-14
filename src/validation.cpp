@@ -1236,15 +1236,15 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
     CAmount nSubsidy = 21 * COIN;
 
     if (nPrevHeight >= 120000 && nPrevHeight <= 149999) {
-        return nSubsidy = 18.004875 * COIN;     // Fork to return to 5% reduction formula
-    } else if (nPrevHeight >= 100000) {
-        return nSubsidy = 20.97900525 * COIN;   // Accounts for second reduction with incorrect logic
-    } else if (nPrevHeight >= 50000) {
-        return nSubsidy = 20.9895 * COIN;       // Accounts for first reduction with incorrect logic
-    } else if (nPrevHeight >= 40000) {
-        return nSubsidy = 5.25 * COIN;          // Accounts for second halving of original creator
-    } else if (nPrevHeight >= 20000) {
-        return nSubsidy = 10.5 * COIN;          // Accounts for first halving of original creator
+        return nSubsidy = 18.9525 * COIN;                           // Fork to return to 5% reduction formula
+    } else if (nPrevHeight >= 100000 && nPrevHeight <= 119999) {
+        return nSubsidy = 20.97900525 * COIN;                       // Accounts for second reduction with incorrect logic
+    } else if (nPrevHeight >= 50000 && nPrevHeight <= 99999) {
+        return nSubsidy = 20.9895 * COIN;                           // Accounts for first reduction with incorrect logic
+    } else if (nPrevHeight >= 40000 && nPrevHeight <= 49999) {
+        return nSubsidy = 5.25 * COIN;                              // Accounts for second halving of original creator
+    } else if (nPrevHeight >= 20000 && nPrevHeight <= 39999) {
+        return nSubsidy = 10.5 * COIN;                              // Accounts for first halving of original creator
     }
 
     // Apply a 5% reduction every 50,000 blocks
