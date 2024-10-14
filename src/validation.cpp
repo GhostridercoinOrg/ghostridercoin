@@ -1236,7 +1236,7 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
     CAmount nSubsidy = 21 * COIN;
 
     if (nPrevHeight >= 120000 && nPrevHeight <= 149999) {
-        return nSubsidy = 18.004875 * COIN;     // Fork to return to 5% reduction formula
+        return nSubsidy = 18.9525 * COIN;     // Fork to return to 5% reduction formula
     } else if (nPrevHeight >= 100000) {
         return nSubsidy = 20.97900525 * COIN;   // Accounts for second reduction with incorrect logic
     } else if (nPrevHeight >= 50000) {
