@@ -2043,17 +2043,14 @@ void ThreadMapPort()
     const char* minissdpdpath = nullptr;
     struct UPNPDev* devlist = nullptr;
     char lanaddr[64];
+#if MINIUPNPC_API_VERSION >= 18
+    char wanaddr[64];
+#endif
 
-#ifndef UPNPDISCOVER_SUCCESS
-    /* miniupnpc 1.5 */
-    devlist = upnpDiscover(2000, multicastif, minissdpdpath, 0);
-#elif MINIUPNPC_API_VERSION < 14
-    /* miniupnpc 1.6 */
     int error = 0;
+#if MINIUPNPC_API_VERSION < 14
     devlist = upnpDiscover(2000, multicastif, minissdpdpath, 0, 0, &error);
 #else
-    /* miniupnpc 1.9.20150730 */
-    int error = 0;
     devlist = upnpDiscover(2000, multicastif, minissdpdpath, 0, 0, 2, &error);
 #endif
 
@@ -2061,9 +2058,16 @@ void ThreadMapPort()
     struct IGDdatas data;
     int r;
 
+#if MINIUPNPC_API_VERSION < 18
     r = UPNP_GetValidIGD(devlist, &urls, &data, lanaddr, sizeof(lanaddr));
+#else
+    r = UPNP_GetValidIGD(devlist, &urls, &data, lanaddr, sizeof(lanaddr), wanaddr, sizeof(wanaddr));
+#endif
     if (r == 1) {
         if (fDiscover) {
+            // Note that the below is technically duplicative for API version > 18, since the wanaddr is filled out
+            // by UPNP_GetValidIGD in the internal call to UPNP_GetExternalIPAddress for API version > 18. However,
+            // it is not harmful to leave the additional separate call here.
             char externalIPAddress[40];
             r = UPNP_GetExternalIPAddress(urls.controlURL, data.first.servicetype, externalIPAddress);
             if (r != UPNPCOMMAND_SUCCESS)
