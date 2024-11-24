@@ -533,7 +533,6 @@ libgrcoin_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libgrcoin_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libgrcoin_consensus_a_SOURCES = \
   amount.h \
-  founder_payment.h \
   arith_uint256.cpp \
   arith_uint256.h \
   bls/bls.cpp \
@@ -578,7 +577,6 @@ libgrcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libgrcoin_common_a_SOURCES = \
   base58.cpp \
   bech32.cpp \
-  founder_payment.cpp \
   bip39.cpp \
   chainparams.cpp \
   smartnode/smartnode-collaterals.cpp \

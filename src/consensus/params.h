@@ -6,7 +6,6 @@
 #ifndef BITCOIN_CONSENSUS_PARAMS_H
 #define BITCOIN_CONSENSUS_PARAMS_H
 
-#include <founder_payment.h>
 #include <map>
 #include <smartnode/smartnode-collaterals.h>
 #include <string>
@@ -206,7 +205,6 @@ struct Params {
     LLMQType llmqTypeInstantSend{LLMQ_NONE};
     LLMQType llmqTypePlatform{LLMQ_NONE};
 
-    FounderPayment nFounderPayment;
     FutureRewardShare nFutureRewardShare;
     SmartnodeCollaterals nCollaterals;
     int smartnodePaymentFixedBlock;

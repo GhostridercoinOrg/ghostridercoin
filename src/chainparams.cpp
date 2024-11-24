@@ -575,8 +575,6 @@ public:
         //        	std::cout << "mainnet is disable" << endl;
         //        	exit(0);
         //        }
-//        std::vector<FounderRewardStructure> rewardStructures = {{INT_MAX, 1}}; // 1% founder/dev fee forever
-//        consensus.nFounderPayment = FounderPayment(rewardStructures, 1);
         consensus.nCollaterals = SmartnodeCollaterals(
             {{INT_MAX, 20000 * COIN}},
             {{INT_MAX, 20}});
@@ -745,9 +743,6 @@ public:
 
         consensus.nFutureRewardShare = Consensus::FutureRewardShare(0.2, 0.8, 0.0);
 
-        std::vector<FounderRewardStructure> rewardStructures = {{INT_MAX, 10}}; // 5% founder/dev fee forever
-        consensus.nFounderPayment = FounderPayment(rewardStructures, 1, "fXDPzS5DhHAJ4E9zwAxbekkx6DFwdwu4ar"); // Cynce test
-
         fDefaultConsistencyChecks = false;
         fRequireStandard = false;
         fRequireRoutableExternalIP = true;
@@ -857,10 +852,6 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0xf3a732cdffc36692963e32653ea5d029ad02a8930a6c19192af2284cffb240cc"));
 
         consensus.nFutureRewardShare = Consensus::FutureRewardShare(0.8, 0.2, 0.0);
-
-        std::vector<FounderRewardStructure> rewardStructures = {{INT_MAX, 5}}; // 5% founder/dev fee forever
-        consensus.nFounderPayment = FounderPayment(rewardStructures, 200, "yaackz5YDLnFuuX6gGzEs9EMRQGfqmNYjc");
-
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -1023,8 +1014,6 @@ public:
         nMinSporkKeys = 1;
         // regtest usually has no smartnodes in most tests, so don't check for upgraged MNs
         fBIP9CheckSmartnodesUpgraded = false;
-        std::vector<FounderRewardStructure> rewardStructures = {{INT_MAX, 5}}; // 5% founder/dev fee forever
-        consensus.nFounderPayment = FounderPayment(rewardStructures, 500, "yaackz5YDLnFuuX6gGzEs9EMRQGfqmNYjc");
 
         checkpointData = {
             {
