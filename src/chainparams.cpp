@@ -612,13 +612,19 @@ public:
         fBIP9CheckSmartnodesUpgraded = true;
 
         checkpointData = {
-            {{7511, uint256S("0x7627c678e52e9eac8979c7942770cba57719603d1706a43289a5530779cc421c")}}};
+            {
+                {7511, uint256S("0x7627c678e52e9eac8979c7942770cba57719603d1706a43289a5530779cc421c")},
+                {50001, uint256S("0xf8c51c6cc03aea5d83cb38c870e0f8c6038a4a8de5fdeed97a0bd7a8c8be5970")},
+                {120001, uint256S("0xf01ad0be7e2e8bd70c624f42e146ee07fb2e32e66af59ac34dc4cabf0ff8ad42")}
+            }
+
+        };
 
         chainTxData = ChainTxData{
-            1720312426, // * UNIX timestamp of last known number of transactions (Block 0)
-            16597,      // * total number of transactions between genesis and that timestamp
+            1730667879, // * UNIX timestamp of last known number of transactions
+            242590,     // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            0.00        // * estimated number of transactions per second after that timestamp
+            0.02        // * estimated number of transactions per second after that timestamp
         };
     }
 };
