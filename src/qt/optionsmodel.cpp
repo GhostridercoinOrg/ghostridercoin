@@ -150,7 +150,7 @@ void OptionsModel::Init(bool resetSettings)
 
     // CoinJoin
     if (!settings.contains("fCoinJoinEnabled")) {
-        settings.setValue("fCoinJoinEnabled", true);
+        settings.setValue("fCoinJoinEnabled", false);
     }
     if (!gArgs.SoftSetBoolArg("-enablecoinjoin", settings.value("fCoinJoinEnabled").toBool())) {
         addOverriddenOption("-enablecoinjoin");
