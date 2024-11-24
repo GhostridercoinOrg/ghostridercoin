@@ -657,8 +657,8 @@ void SetupServerArgs()
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/CynceNYC/ghostridercoin>";
-    const std::string URL_WEBSITE = "<http://ghostridercoin.org>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/ghostridercoinorg/ghostridercoin>";
+    const std::string URL_WEBSITE = "<https://ghostridercoin.org>";
 
     return CopyrightHolders(_("Copyright (C)"), 2014, COPYRIGHT_YEAR) + "\n" +
            "\n" +
