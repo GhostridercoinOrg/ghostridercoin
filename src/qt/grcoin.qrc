@@ -8,11 +8,12 @@
         <file alias="arrow_right">res/icons/arrow_right.png</file>
         <file alias="browse">res/icons/browse.png</file>
         <file alias="configure">res/icons/configure.png</file>
-        <file alias="connect_0">res/icons/connect0_16.png</file>
-        <file alias="connect_1">res/icons/connect1_16.png</file>
-        <file alias="connect_2">res/icons/connect2_16.png</file>
-        <file alias="connect_3">res/icons/connect3_16.png</file>
-        <file alias="connect_4">res/icons/connect4_16.png</file>
+        <file alias="connect_0">res/icons/connect0.png</file>
+        <file alias="connect_1">res/icons/connect1.png</file>
+        <file alias="connect_2">res/icons/connect2.png</file>
+        <file alias="connect_3">res/icons/connect3.png</file>
+        <file alias="connect_4">res/icons/connect4.png</file>
+        <file alias="connect_5">res/icons/connect5.png</file>
         <file alias="console_remove">res/icons/console_remove.png</file>
         <file alias="debugwindow">res/icons/debugwindow.png</file>
         <file alias="edit">res/icons/edit.png</file>
