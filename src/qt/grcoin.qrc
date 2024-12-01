@@ -42,7 +42,6 @@
         <file alias="transaction_3">res/icons/clock3.png</file>
         <file alias="transaction_4">res/icons/clock4.png</file>
         <file alias="transaction_5">res/icons/clock5.png</file>
-        <file alias="transaction_6">res/icons/clock6.png</file>
         <file alias="transaction_abandoned">res/icons/transaction_abandoned.png</file>
         <file alias="transaction_locked">res/icons/transaction_locked.png</file>
         <file alias="tx_inout">res/icons/tx_inout.png</file>
