@@ -1,7 +1,5 @@
 # GhostRider Coin (GRR)
 
-Release: v2.0.5.1 - THIS IS A MAINNET RELEASE
-
 ## Reintroducing Smartnodes
 
 Per community vote, GRCoin is introducing a smartnode system. We still emphasize simplicity and efficiency with a permanent collateral and rewards split between miners and smartnodes. Please refer to the project discord for more information.
@@ -18,9 +16,10 @@ The block creation time for GRCoin is 90 seconds. Every 50,000 blocks, the block
 
 The total supply of GRCoin is approximately 25,000,000 GRR.
 
-## No Website, Explorer, Social Media
-
-Please visit the prokect discord. https://discord.gg/uQMQPbv5w9
+## Links
+Website: https://ghostridercoin.org  
+Explorer: https://explorer.ghostridercoin.org  
+Discord: https://discord.gg/uQMQPbv5w9  
 
 ## Pro-Miner for Miners
 
@@ -34,7 +33,4 @@ With GRCoin, you have full control over how to use and develop it. This is a com
 
 Ghostrider algorithm harnesses the power of the CPU to mine coins. This means that any device with a CPU can mine GRCoin without needing to share resources. There is no developers fee.
 
-## Original repo forked and updated by:
-                             
-**cynce**
 
