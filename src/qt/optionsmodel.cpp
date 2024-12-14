@@ -146,7 +146,7 @@ void OptionsModel::Init(bool resetSettings)
     fCoinControlFeatures = settings.value("fCoinControlFeatures", true).toBool();
 
     if (!settings.contains("digits"))
-        settings.setValue("digits", "2");
+        settings.setValue("digits", "8");
 
     // CoinJoin
     if (!settings.contains("fCoinJoinEnabled")) {
